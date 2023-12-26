@@ -614,6 +614,7 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
           margin:0px !important;
           width:100%;
           border:none;
+          line-height: 1.5;
           font-style: ${StringUtil.getCssFontStyle(widget.textStyle?.fontStyle)};
           font-size: ${widget.textStyle?.fontSize ?? '14'}px;
           color:${(widget.textStyle!.color ?? Colors.black).toRGBA()};

@@ -20,8 +20,7 @@ class ColorPicker extends StatelessWidget {
             shrinkWrap: true,
             itemCount: _colorList.length,
             padding: const EdgeInsets.all(2),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
             itemBuilder: (context, index) {
               return WebViewAware(
                 child: GestureDetector(
@@ -37,8 +36,8 @@ class ColorPicker extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: Container(
-        decoration: BoxDecoration(
-            color: HexColor.fromHex(hexColor), border: Border.all(width: 0.3)),
+        decoration:
+            BoxDecoration(color: HexColor.fromHex(hexColor), border: Border.all(width: 0.3)),
         width: 40,
         height: 40,
       ),
@@ -50,7 +49,7 @@ class ColorPicker extends StatelessWidget {
 const List<String> _colorList = [
   '#000000',
   '#FFFFFF',
-  '#F44336',
+  '#FF2600',
   '#9B9B9B',
   '#9C27B0',
   '#673AB7',

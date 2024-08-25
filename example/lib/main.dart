@@ -38,12 +38,9 @@ class _MyAppState extends State<MyApp> {
   final _backgroundColor = Colors.white70;
   final _toolbarIconColor = Colors.black87;
   final _editorTextStyle = const TextStyle(
-      fontSize: 18,
-      color: Colors.black,
-      fontWeight: FontWeight.normal,
-      fontFamily: 'Roboto');
-  final _hintTextStyle = const TextStyle(
-      fontSize: 18, color: Colors.black38, fontWeight: FontWeight.normal);
+      fontSize: 18, color: Colors.black, fontWeight: FontWeight.normal, fontFamily: 'Roboto');
+  final _hintTextStyle =
+      const TextStyle(fontSize: 18, color: Colors.black38, fontWeight: FontWeight.normal);
 
   bool _hasFocus = false;
 
@@ -101,8 +98,7 @@ class _MyAppState extends State<MyApp> {
                     onTap: () async {
                       var selectedText = await controller.getSelectedText();
                       debugPrint('selectedText $selectedText');
-                      var selectedHtmlText =
-                          await controller.getSelectedHtmlText();
+                      var selectedHtmlText = await controller.getSelectedHtmlText();
                       debugPrint('selectedHtmlText $selectedHtmlText');
                     },
                     child: const Icon(
@@ -146,10 +142,8 @@ class _MyAppState extends State<MyApp> {
                   debugPrint('Editor has been loaded');
                   setHtmlText('Testing text on load');
                 },
-                onEditorResized: (height) =>
-                    debugPrint('Editor resized $height'),
-                onSelectionChanged: (sel) =>
-                    debugPrint('index ${sel.index}, range ${sel.length}'),
+                onEditorResized: (height) => debugPrint('Editor resized $height'),
+                onSelectionChanged: (sel) => debugPrint('index ${sel.index}, range ${sel.length}'),
               ),
             ),
           ],
@@ -174,8 +168,7 @@ class _MyAppState extends State<MyApp> {
                   text: 'Insert Video',
                   onPressed: () {
                     ////insert
-                    insertVideoURL(
-                        'https://www.youtube.com/watch?v=4AoFA19gbLo');
+                    insertVideoURL('https://www.youtube.com/watch?v=4AoFA19gbLo');
                     insertVideoURL('https://vimeo.com/440421754');
                     insertVideoURL(
                         'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4');
@@ -188,8 +181,7 @@ class _MyAppState extends State<MyApp> {
               textButton(
                   text: 'Insert Index',
                   onPressed: () {
-                    insertHtmlText("This text is set by the insertText method",
-                        index: 10);
+                    insertHtmlText("This text is set by the insertText method", index: 10);
                   }),
               textButton(
                   text: 'Undo',
@@ -230,9 +222,7 @@ class _MyAppState extends State<MyApp> {
                           }
                         },
                         {
-                          "insert": {
-                            "video": "https://www.youtube.com/embed/4AoFA19gbLo"
-                          }
+                          "insert": {"video": "https://www.youtube.com/embed/4AoFA19gbLo"}
                         },
                         {"insert": "Hello"},
                         {

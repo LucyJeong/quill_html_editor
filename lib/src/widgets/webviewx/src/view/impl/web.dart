@@ -147,14 +147,12 @@ class _WebViewXState extends State<WebViewX> {
 
   late WebViewXController webViewXController;
 
-  late bool _didLoadInitialContent;
   late bool _ignoreAllGestures;
 
   @override
   void initState() {
     super.initState();
 
-    _didLoadInitialContent = false;
     _ignoreAllGestures = widget.ignoreAllGestures;
 
     iframeViewType = _createViewType();
@@ -279,12 +277,7 @@ class _WebViewXState extends State<WebViewX> {
     iframeOnLoadSubscription = iframe.onLoad.listen((event) {
       _debugLog('IFrame $iframeViewType has been (re)loaded.');
 
-      if (!_didLoadInitialContent) {
-        _didLoadInitialContent = true;
-        _callOnPageStartedCallback(webViewXController.value.source);
-      } else {
         _callOnPageFinishedCallback(webViewXController.value.source);
-      }
     });
   }
 
